@@ -1,16 +1,11 @@
 function checkAnswer() {
-    // Correct answer
-    const correctAnswer = "4";
+    const correctAnswer = "4"; // Correct answer to the quiz question
+    const userAnswer = document.querySelector('input[name="quiz"]:checked'); // Get checked radio button
 
-    // Get the user's answer
-    const userAnswer = document.querySelector('input[name="quiz"]:checked');
+    const feedback = document.getElementById("feedback"); // Feedback element
 
-    // Feedback element
-    const feedback = document.getElementById("feedback");
-
-    if (userAnswer) {
-        // Check if the user's answer is correct
-        if (userAnswer.value === correctAnswer) {
+    if (userAnswer) { // Ensure an answer is selected
+        if (userAnswer.value === correctAnswer) { // Compare values
             feedback.textContent = "Correct! Well done.";
             feedback.style.color = "green";
         } else {
